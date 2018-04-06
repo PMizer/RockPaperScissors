@@ -53,6 +53,7 @@ public class GameRunner {
                     "\n 4 - Jaszczurka " +
                     "\n 5 - Spock");
 
+
             Move userMove = user.getMove();
             Move computerMove = computer.getMove();
             System.out.println("Zagrales: " + userMove);

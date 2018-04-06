@@ -10,7 +10,12 @@ public class User {
     }
     public Move getMove(){
 
+        while (!inputScanner.hasNextInt()) {
+            System.out.println("To nie jest liczba.");
+            inputScanner.next();
+        }
         int userInput = inputScanner.nextInt();
+
         if(userInput > 0 && userInput < 6){
             switch(userInput){
                 case 1:
