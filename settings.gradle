@@ -1,0 +1,4 @@
+rootProject.name = 'RockPaperScissors'
+include 'RockPaperScissorsGame'
+include 'Test'
+
