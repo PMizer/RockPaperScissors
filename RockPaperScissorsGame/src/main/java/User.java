@@ -30,6 +30,7 @@ public class User {
                     return Move.SPOCK;
             }
         }
+        System.out.println("Nie wybrales liczby z zakresu 1 - 5.\nWybierz jeszcze raz");
         return getMove();
     }
 
