@@ -3,3 +3,5 @@
 .gradle/
 .idea/
 
+/Test/
+/RockPaperScissorsGame/src/test/java/TestingChance.java

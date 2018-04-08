@@ -23,4 +23,5 @@ public enum Move {
         return 0;
 
     }
+
 }

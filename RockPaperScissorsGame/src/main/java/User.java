@@ -47,6 +47,7 @@ public class User {
         }
         else{
             System.out.println("Dziekuje za wspolna gre.");
+            GameRunner.GameOff();
         }
     }
 
