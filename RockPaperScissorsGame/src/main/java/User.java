@@ -3,11 +3,12 @@ import java.util.*;
 
 
 public class User {
-    private Scanner inputScanner;
 
-    public User(){
-        inputScanner = new Scanner(System.in);
-    }
+    private static final int LOWEST_NUMBER = 1;
+    private static final int FIRST_CHARACTER = 0;
+    private static final int HIGHEST_NUMBER = 6;
+    private Scanner inputScanner = new Scanner(System.in);
+
     public Move getMove(){
 
         while (!inputScanner.hasNextInt()) {
@@ -16,7 +17,7 @@ public class User {
         }
         int userInput = inputScanner.nextInt();
 
-        if(userInput > 0 && userInput < 6){
+        if(userInput >= LOWEST_NUMBER && userInput <= HIGHEST_NUMBER){
             switch(userInput){
                 case 1:
                     return Move.PAPER;
@@ -37,13 +38,13 @@ public class User {
     public void playAgain(){
         System.out.println("Czy chcesz zagrac jeszcze raz? \n Jesli tak wpisz n! \n Jesli chcesz zakonczyc wpisz x");
         inputScanner = new Scanner(System.in);
-        char userInput = inputScanner.nextLine().charAt(0);
+        char userInput = inputScanner.nextLine().charAt(FIRST_CHARACTER);
         while(userInput!='n' && userInput !='x') {
             playAgain();
         }
         if (userInput == 'n'){
             GameRunner game = new GameRunner();
-            game.gameRunner();
+            game.runGame();
         }
         else{
             System.out.println("Dziekuje za wspolna gre.");

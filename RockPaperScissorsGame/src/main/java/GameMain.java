@@ -1,8 +1,8 @@
 public class GameMain {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         GameRunner game = new GameRunner();
-        game.gameRunner();
-        }
+        game.runGame();
     }
+}
 

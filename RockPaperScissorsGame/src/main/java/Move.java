@@ -1,26 +1,24 @@
 public enum Move {
     ROCK, PAPER, SCISSORS, LIZARD, SPOCK;
 
-    public int compareMoves(Move otherMove) {
+    public Winner compareMoves(Move otherMove) {
 
         if (this == otherMove)
-            return 0;
+            return Winner.DRAW;
 
         switch (this) {
             case ROCK:
-                return ((otherMove == SCISSORS || otherMove == LIZARD) ? 1 : -1);
+                return ((otherMove == SCISSORS || otherMove == LIZARD) ? Winner.PLAYER_WINNS : Winner.COMPUTER_WINNS);
             case PAPER:
-                return ((otherMove == ROCK || otherMove == SPOCK) ? 1 : -1);
+                return ((otherMove == ROCK || otherMove == SPOCK) ? Winner.PLAYER_WINNS : Winner.COMPUTER_WINNS);
             case SCISSORS:
-                return ((otherMove == PAPER || otherMove == LIZARD) ? 1 : -1);
+                return ((otherMove == PAPER || otherMove == LIZARD) ? Winner.PLAYER_WINNS : Winner.COMPUTER_WINNS);
             case LIZARD:
-                return ((otherMove == SPOCK || otherMove == PAPER) ? 1 : -1);
+                return ((otherMove == SPOCK || otherMove == PAPER) ? Winner.PLAYER_WINNS : Winner.COMPUTER_WINNS);
             case SPOCK:
-                return ((otherMove == SCISSORS || otherMove == ROCK) ? 1 : -1);
+                return ((otherMove == SCISSORS || otherMove == ROCK) ? Winner.PLAYER_WINNS : Winner.COMPUTER_WINNS);
         }
 
-
-        return 0;
-
+        throw new CustomException();
     }
 }
